@@ -1,4 +1,4 @@
-export const API_KEY = "AIzaSyBiiF3GiPEgSuQhbgCU1ZT3Wn3_4Txk2Qg";
+export const API_KEY = process.env.GOOGLE_API_KEY;
 
 export const URL_MAPS = (
     lat,
