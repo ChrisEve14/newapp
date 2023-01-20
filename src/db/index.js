@@ -53,10 +53,9 @@ export const getCharacters = () => {
 
 export const eraseCharacters = () => {
     const promise = new Promise((resolve, reject) => {
+      const query =  "DELETE FROM characters WHERE id = ?";
         db.transaction((tx) => {
-            tx.executeSql(
-                "DELETE FROM characters WHERE id = some_value",
-                [],
+            tx.executeSql( query, [id],
                 (_, result) => {
                     resolve(result);
                   },
@@ -65,9 +64,6 @@ export const eraseCharacters = () => {
                 }
             );
         });
-    });
-
-
-    
+    });    
     return promise;
 };

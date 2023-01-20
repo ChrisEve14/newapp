@@ -9,22 +9,9 @@ import { useSelector, useDispatch } from 'react-redux';
 const Notif = ({ navigation }) => {
     const characters = useSelector((state) => state.character.characters);
 
-    // const dispatch = useDispatch();
-
-    // const onDelete = (id) => {
-    //     dispatch(deleteNotif(id));
-    // };
-
-    // useFocusEffect(
-    //     useCallback(() => {
-    //       dispatch(getNotif());
-    //     }, [dispatch])
-    //   );
-
     const renderItem = ({ item }) => 
     <NotificationsItem 
     {...item} 
-    // onDelete={onDelete}
     />;
     
     return (

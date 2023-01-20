@@ -45,4 +45,5 @@ export const styles = StyleSheet.create({
       color: colors.black,
       textAlign: "center",
     },
+ 
 });

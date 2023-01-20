@@ -15,9 +15,6 @@ const NotificationsItem = ({ id, title, description, image, address, onSelect })
                 <View style={styles.content}>
                     <Text style={styles.added}>Characters Added: {title}</Text>
                 </View>
-                <TouchableOpacity onPress={() => onDelete(id)}>
-                    <FontAwesome name="trash-o" size={24} color={colors.icons}/>
-                </TouchableOpacity>
             </View>
         </View>
     )

@@ -17,15 +17,17 @@ const CharactersList = ({navigation}) => {
     dispatch(loadCharacters());
   }, [dispatch]);
 
-  const onDelete = (id) => {
-    dispatch(deleteCharacters(id));
-  }
+  // const onDelete = () => {
+  //   dispatch(deleteCharacters());
+  // }
 
    const renderItem = ({item}) => 
    <ListItem {...item} 
-   onDelete={onDelete}
+   onDelete={(id) => deleteCharacters(id)}
    onSelect={() => navigation.navigate('Character', { characterId: item.id})} 
    />;
+
+   console.warn("delete", renderItem);
 
    const ListEmptyComponent = () => (
     <View style={styles.emptyContainer}>

@@ -28,12 +28,14 @@ export const styles = StyleSheet.create({
     },
     buttonContainer: {
         flexDirection: "row",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
+        borderBottomColor: colors.gray,
+        borderBottomWidth: 1,
     },
     trash: {
         alignItems: "center",
         justifyContent: "center",
-        // marginRight: 20,
+        marginRight: 25,
     },
 });
 

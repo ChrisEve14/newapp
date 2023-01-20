@@ -71,10 +71,10 @@ export const loadCharacters = () => {
   };
 };
 
-export const deleteCharacters = () => {
+export const deleteCharacters = (id) => {
   return async (dispatch) => {
     try {
-      const result = await eraseCharacters();
+      const result = await eraseCharacters(id);
       dispatch(setCharacters(result));
     }catch (error) {
       console.warn(error);

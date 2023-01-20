@@ -1,16 +1,18 @@
 import React from 'react';
-import { View, Text, ScrollView, Image } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { useSelector } from "react-redux";
 import MapPreview from "../../components/map-preview";
 import { styles } from './styles';
 
+
 const CharacterDetail = ({navigation, route}) => {
+
     const { characterId } = route.params;
 
     const character = useSelector((state) => state.character.characters.find((character) => character.id === characterId));
     const { title, description, image, address, coords } = character || {};
     const location = JSON.parse(coords);
-   
+
     return (
       <ScrollView style={styles.container}>
         <Text style={styles.title}>{title}</Text>

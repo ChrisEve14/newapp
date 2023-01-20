@@ -4,7 +4,7 @@ import { View, Text, KeyboardAvoidingView, Button, TouchableOpacity } from 'reac
 import { isAndroid } from '../../utils/functions/index';
 import { colors } from '../../constants/themes/colors';
 import { styles } from './styles';
-import { signUp, signIn } from '../../store/auth.slice';
+import { signUp, signIn } from '../../store/actions/auth.action';
 import { Input } from '../../components';
 import { onInputChange, UPDATED_FORM } from '../../utils/form';
 
@@ -51,8 +51,6 @@ const Auth = ({ navigation }) => {
             : signUp(formState.email.value, formState.password.value)
         );
       };
-     
-
     
     const onHandleChangeInput = (value, type) => {
         onInputChange(type, value, dispatchFormState, formState);

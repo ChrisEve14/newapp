@@ -13,7 +13,6 @@ const ListItem = ({ id, title, description, image, address, onSelect, onDelete }
           <Image style={styles.image} source={{ uri: image }} />
           <View style={styles.infoContainer}>
             <Text style={styles.title}>{title}</Text>
-            {/* <Text style={styles.address}>{address}</Text> */}
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.trash} onPress={onDelete}>
