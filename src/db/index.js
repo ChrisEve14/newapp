@@ -51,7 +51,7 @@ export const getCharacters = () => {
   return promise;
 };
 
-export const eraseCharacters = () => {
+export const eraseCharacters = (id) => {
     const promise = new Promise((resolve, reject) => {
       const query =  "DELETE FROM characters WHERE id = ?";
         db.transaction((tx) => {

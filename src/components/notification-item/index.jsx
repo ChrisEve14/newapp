@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { styles } from './styles';
 import { formatDate } from '../../utils';
-import { FontAwesome } from '@expo/vector-icons';
-import { colors } from '../../constants/themes/colors';
 
 const NotificationsItem = ({ id, title, description, image, address, onSelect }) => {
     return (

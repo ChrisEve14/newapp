@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "fictionizedapp",
-    "slug": "fictionizedapp",
+    "slug": "fictionized",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,10 +24,27 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.chriseve.fictionized",
+      "permission":[
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "WRITE_INTERAL_STORAGE"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": ""
+        }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c174487c-cae3-41b1-aa49-90693b6ee1ce"
+      }
+    },
+    "owner": "chriseve"
   }
 }

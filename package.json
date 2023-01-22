@@ -30,7 +30,8 @@
     "react-native-screens": "~3.18.0",
     "react-redux": "^8.0.5",
     "redux-thunk": "^2.4.2",
-    "expo-sqlite": "~11.0.0"
+    "expo-sqlite": "~11.0.0",
+    "expo-updates": "~0.15.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

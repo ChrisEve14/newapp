@@ -49,12 +49,10 @@ export const saveCharacter = ({title, description, image, coords}) => {
         const address = data.results[0].formatted_address;
 
         const result = await insertCharacter (title, description, image, address, coords);
-        console.warn(result);
-        dispatch(addCharacter({id: result.insertId, title, description, image, address, coords}));
-
-      } catch (error) {
+        dispatch(loadCharacters())
         console.log(error);
         throw error;
+      } catch (error) {
     };
   };
 };
@@ -64,9 +62,8 @@ export const loadCharacters = () => {
     try {
       const result = await getCharacters();
       dispatch(setCharacters(result?.rows?._array));
-    } catch (error) {
-      console.warn(error);
       throw error;
+    } catch (error) {
     }
   };
 };
@@ -75,10 +72,10 @@ export const deleteCharacters = (id) => {
   return async (dispatch) => {
     try {
       const result = await eraseCharacters(id);
-      dispatch(setCharacters(result));
-    }catch (error) {
+      dispatch(setCharacters(state.characters.filter(item => item.id !== id)));
       console.warn(error);
       throw error;
+    }catch (error) {
     }
   };
 };

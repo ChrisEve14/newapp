@@ -7,8 +7,6 @@ export const styles = StyleSheet.create({
         margin: 10,
         flexDirection: "row",
         alignItems: "center",
-        // borderBottomColor: colors.gray,
-        // borderBottomWidth: 1,
     },
     image:{
         width: 100,
@@ -23,8 +21,6 @@ export const styles = StyleSheet.create({
         fontSize: 25,
         fontFamily: "Indie",
         color: colors.black,
-        // marginBottom: 10,
-        // marginTop: 5,
     },
     buttonContainer: {
         flexDirection: "row",

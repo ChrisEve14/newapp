@@ -1,11 +1,10 @@
 import React from 'react';
 import { useEffect } from "react";
-import { View, Text, Button, FlatList} from 'react-native';
+import { View, Text, FlatList} from 'react-native';
 import { useSelector, useDispatch } from "react-redux"
 import { ListItem } from '../../components';
 import { styles } from './styles';
-import { colors } from '../../constants/themes/colors';
-import { loadCharacters, deleteCharacters } from "../../store/character.slice";
+import { loadCharacters, deleteCharacters, setCharacters } from "../../store/character.slice";
 
 
 const CharactersList = ({navigation}) => {
@@ -15,19 +14,21 @@ const CharactersList = ({navigation}) => {
 
   useEffect(() => {
     dispatch(loadCharacters());
-  }, [dispatch]);
+  }, []);
 
-  // const onDelete = () => {
-  //   dispatch(deleteCharacters());
-  // }
+  const onDelete = (id) => {
+    const updatedCharacters = characters.filter(item => item.id !== id);
+    dispatch(setCharacters(updatedCharacters));
+    dispatch(deleteCharacters(id));
+  }
+ 
 
    const renderItem = ({item}) => 
    <ListItem {...item} 
-   onDelete={(id) => deleteCharacters(id)}
+   onDelete={onDelete}
    onSelect={() => navigation.navigate('Character', { characterId: item.id})} 
    />;
 
-   console.warn("delete", renderItem);
 
    const ListEmptyComponent = () => (
     <View style={styles.emptyContainer}>
@@ -36,14 +37,13 @@ const CharactersList = ({navigation}) => {
   );
 
     return (
-        <FlatList
+      <FlatList
         style={styles.container}
         data={characters}
         keyExtractor={(item) => item.id}
-        renderItem={renderItem}
+        renderItem={({item}) => renderItem({item})}
         ListEmptyComponent={ListEmptyComponent}
-        />
-
+      />
     )
 }
 

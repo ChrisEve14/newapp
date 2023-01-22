@@ -15,7 +15,7 @@ const ListItem = ({ id, title, description, image, address, onSelect, onDelete }
             <Text style={styles.title}>{title}</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.trash} onPress={onDelete}>
+        <TouchableOpacity style={styles.trash} onPress={() => onDelete(id)}>
           <FontAwesome name="trash-o" size={24} color={colors.icons}/>
         </TouchableOpacity>
       </View>
